@@ -31,9 +31,9 @@ public class RegisterController {
     private EmailService emailService;
 
     @Autowired
-    public RegisterController(BCryptPasswordEncoder bCryptPasswordEncoder, UserService userService, EmailService emailService) {
+    public RegisterController(UserService userService, EmailService emailService) {
 
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.bCryptPasswordEncoder = new BCryptPasswordEncoder();
         this.userService = userService;
         this.emailService = emailService;
     }
